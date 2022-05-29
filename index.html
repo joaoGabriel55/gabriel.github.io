@@ -18,15 +18,9 @@
     <nav>
       <div class="nav-wrapper indigo darken-3">
         <ul id="nav-mobile" class="hide-on-med-and-down">
-          <li><a href="#">#Java</a></li>
-          <li><a href="#">#Spring</a></li>
-          <li><a href="#">#JavaScript</a></li>
-          <li><a href="#">#React.js</a></li>
-          <li><a href="#">#Vue.js</a></li>
-          <li><a href="#">#Node.js</a></li>
-          <li><a href="#">#Android</a></li>
-          <li><a href="#">#Dart</a></li>
-          <li><a href="#">#Flutter</a></li>
+          <li v-for="skill in skills">
+            <a href="#">{{ skill }}</a>
+          </li>
         </ul>
       </div>
     </nav>
@@ -34,7 +28,6 @@
       <div id="index-banner" class="parallax-container">
         <div class="section no-pad-bot">
           <div class="container">
-            <br><br>
             <div class="profile">
               <img
                 class="profile-pic"
@@ -66,7 +59,7 @@
         </div>
       </div>
       <div class="parallax-container valign-wrapper">
-        <div class="section">
+        <div class="section my-description">
           <div class="container">
             <div class="row center">
               <h5 class="header col s12 light">
@@ -139,6 +132,17 @@
           return {
             currentYear: new Date().getFullYear(),
             repositories: null,
+            skills: [
+              "#Java",
+              "#Spring",
+              "#JavaScript",
+              "#React.js",
+              "#Vue.js",
+              "#Node.js",
+              "#Android",
+              "#Dart",
+              "#Flutter",
+            ]
           };
         },
         mounted() {
