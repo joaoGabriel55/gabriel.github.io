@@ -37,6 +37,10 @@
             </div>
             <div class="row center">
               <h5 class="header white-text col s12 light">Front-end (web and mobile) developer</h5>
+              <h6 class="header white-text col s12 light">
+                📍 {{ profileInfo.location }} - 
+                🤩 Github followers: {{ profileInfo.followers }}
+              </h6>
             </div>
           </div>
         </div>
@@ -125,12 +129,18 @@
     <script type="text/javascript" src="js/materialize.min.js"></script>
     <script type="text/javascript" src="js/index.js"></script>
     <script setup>
+      const BASE_API = 'https://api.github.com/users/joaoGabriel55'
+  
       const { createApp } = Vue;
 
       createApp({
         data() {
           return {
             currentYear: new Date().getFullYear(),
+            profileInfo: {
+              location: '',
+              followers: '',
+            },
             repositories: null,
             skills: [
               "#Java",
@@ -146,13 +156,32 @@
           };
         },
         mounted() {
-          fetch("https://api.github.com/users/joaoGabriel55/repos")
-            .then((response) => response.json())
-            .then((data) => {
-              this.repositories = data.filter(
-                (repo) => repo.name !== "joaoGabriel55.github.io"
-              );
-            });
+          this.loadProfile()
+          this.loadRepositories()
+        },
+        methods: {
+          loadProfile() {
+            fetch(BASE_API)
+              .then((response) => response.json())
+              .then(({ location, followers }) => {
+                this.profileInfo = { location, followers }
+              });
+          },
+          loadRepositories() {
+            fetch(`${BASE_API}/repos`)
+              .then((response) => response.json())
+              .then((data) => {
+                repositories = data.filter(
+                  (repo) => repo.name !== "joaoGabriel55.github.io"
+                );
+
+                repositories.sort((a,b) => {
+                  return a.stargazers_count - b.stargazers_count
+                });
+
+                this.repositories = repositories.reverse()
+              });
+          }
         },
       }).mount("#app");
     </script>
