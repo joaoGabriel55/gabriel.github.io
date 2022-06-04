@@ -40,11 +40,39 @@ main {
   margin: 0 auto;
 }
 
-.repositories-slider {
+.repositories-slider, .pull-requests-slider {
   display: flex;
   padding: 38px 18px 0 18px;
   gap: 8px;
   overflow-x: auto;
+}
+
+.pull-requests-slider {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  column-gap: 18px;
+  row-gap: 18px;
+  overflow-y: auto;
+  max-height: 500px;
+}
+
+.pull-request-card {
+  cursor: pointer;
+  width: 100%;
+  padding: 0 18px;
+  padding-bottom: 18px;
+  border-radius: 4px;
+  border: 1px solid rgb(165, 165, 165);
+}
+
+.pull-request-card:hover {
+  background-color: rgb(245, 245, 245);
+}
+
+.pull-request-card-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
 @media only screen and (max-width: 992px) {
@@ -64,6 +92,11 @@ main {
 
   .repositories-slider::-webkit-scrollbar {
     width: 0;
+  }
+
+  .pull-requests-slider {
+    display: flex;
+    flex-direction: column;
   }
 
   .my-description {
