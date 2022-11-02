@@ -21,7 +21,6 @@ main {
   }
 }
 
-
 a {
   text-decoration: none;
   color: inherit;
@@ -119,7 +118,7 @@ a {
     gap: 1.8rem;
     overflow-x: scroll;
   }
-  
+
   .github-languages {
     width: 28rem;
     height: max-content;
@@ -190,19 +189,19 @@ a {
     flex-direction: column;
     align-items: center;
   }
-  
+
   .subtitle {
     font-size: 2.4rem;
     font-weight: 500;
     margin-bottom: 7.4rem;
     padding: 0 4rem;
   }
-  
+
   .profile-image {
     width: 16rem;
     height: 16rem;
   }
-  
+
   .social-networks {
     display: flex;
     gap: 2.8rem;
@@ -212,7 +211,7 @@ a {
   .social-networks img {
     width: 4rem;
   }
-  
+
   .social-network {
     cursor: pointer;
     background-color: white;
@@ -222,17 +221,17 @@ a {
     transition: 0.3s;
   }
 
-  
   .social-network:hover {
     transition: 0.3s;
     background-color: rgb(218, 218, 218);
   }
-  
+
   .footer {
     margin-top: auto;
     font-weight: 400;
     font-size: 1rem;
     text-align: center;
     padding: 0 2rem;
+    padding-top: 2rem;
   }
 }
