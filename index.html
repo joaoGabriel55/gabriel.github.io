@@ -15,239 +15,92 @@
     <script src="https://unpkg.com/vue@3"></script>
   </head>
   <body id="app">
-    <nav>
-      <div class="nav-wrapper indigo darken-3">
-        <ul id="nav-mobile" class="hide-on-med-and-down">
-          <li v-for="skill in skills">
-            <a href="#">{{ skill }}</a>
-          </li>
-        </ul>
-      </div>
-    </nav>
     <main>
-      <div id="index-banner" class="parallax-container">
-        <div class="section no-pad-bot">
-          <div class="container">
-            <div class="profile">
-              <img
-                class="profile-pic"
-                src="https://avatars.githubusercontent.com/u/23138717?v=4"
-              />
-              <h1 class="header center white-text text-lighten-2">Gabriel Quaresma</h1>
-            </div>
-            <div class="row center">
-              <h5 class="header white-text col s12 light">Front-end (web and mobile) developer</h5>
-              <h6 class="header white-text col s12 light">
-                📍 {{ profileInfo.location }} - 
-                🤩 Github followers: {{ profileInfo.followers }}
-              </h6>
-            </div>
-          </div>
-        </div>
-        <div class="parallax"><img src="assets/frontend_webdeveloper.jpg" alt="Unsplashed background img 1"></div>
-      </div>
-      <div class="row">
-        <div class="col s12">
-          <ul class="tabs tabs-fixed-width">
-            <li class="tab col s3">
-              <a href="#repositories" class="active indigo-text text-darken-3">Repositories</a>
-            </li>
-            <li class="tab col s3">
-              <a class="indigo-text text-darken-3" href="#pull-requests">Pull Requests</a>
-            </li>
-          </ul>
-        </div>
-        <div id="repositories" class="col s12">
-          <div class="section">
-            <div v-if="repositories" class="repositories-slider">
-              <div v-for="repository in repositories">
-                <a :href=`https://github.com/joaoGabriel55/${repository.name}` target="_blank">
-                  <img :src=`https://gh-card.dev/repos/joaoGabriel55/${repository.name}.svg?fullname=` />
-                </a>
-              </div>
-            </div>
-            <div v-else>
-              <div class="progress">
-                <div class="indeterminate indigo darken-4"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div id="pull-requests" class="col s12">
-          <div v-if="pullRequests" class="pull-requests-slider">
-            <div v-for="pullRequest in pullRequests">
-              <div class="card">
-                <div class="card-content">
-                  <p class="pull-request-card-title">
-                    <svg height="16" viewBox="0 0 16 16" version="1.1" width="16" aria-hidden="true">
-                      <path fill-rule="evenodd" :fill="pullRequest.state === 'open' ? '#3fb950' : '#a371f7'" d="M7.177 3.073L9.573.677A.25.25 0 0110 .854v4.792a.25.25 0 01-.427.177L7.177 3.427a.25.25 0 010-.354zM3.75 2.5a.75.75 0 100 1.5.75.75 0 000-1.5zm-2.25.75a2.25 2.25 0 113 2.122v5.256a2.251 2.251 0 11-1.5 0V5.372A2.25 2.25 0 011.5 3.25zM11 2.5h-1V4h1a1 1 0 011 1v5.628a2.251 2.251 0 101.5 0V5A2.5 2.5 0 0011 2.5zm1 10.25a.75.75 0 111.5 0 .75.75 0 01-1.5 0zM3.75 12a.75.75 0 100 1.5.75.75 0 000-1.5z"></path>
-                    </svg>
-                    <strong>{{ pullRequest.repository }}</strong>
-                  </p>
-                  <br/>
-                  <p>
-                    <a :href="pullRequest.link" target="_blank">{{ pullRequest.title }}</a>
-                  </p>
-                  <br/>
-                  <span>{{ pullRequest.updatedAt }}</span>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div v-else>
-            <div class="progress">
-              <div class="indeterminate indigo darken-4"></div>
-            </div>
-          </div>
+      <div class="presentation">
+        <h1 class="title">Hi! I am <br />Gabriel Quaresma</h1>
+        <p class="description">
+          I am web front-end and mobile software developer. But sometimes I like
+          to develop back-end solutions.
+          <br />
+          Enthusiast in the design area (UI and UX) and manual drawings.
+          Nowadays I'm working with React.js and love to create my own UIs using
+          Figma tool.
+        </p>
+        <div class="infos">
+          <p class="info-item">
+            <img src="assets/location.svg" alt="Location" />
+            Natal - RN, Brazil
+          </p>
+          <a class="info-item" href="mailto: j.quaresmasantos_98@hotmail.com">
+            <img src="assets/email.svg" alt="Email" />
+            j.quaresmasantos_98@hotmail.com
+          </a>
         </div>
       </div>
-      <div class="parallax-container valign-wrapper">
-        <div class="section my-description">
-          <div class="container">
-            <div class="row center">
-              <h5 class="header col s12 light">
-                <p>
-                  I am web front-end and mobile software developer. But sometimes I like to develop back-end solutions.
-                </p>
-                <p>
-                  Enthusiast in the design area (UI and UX) and manual drawings.
-                  Nowadays I'm working with React.js and love to create my own UIs using Figma tool.
-                </p>
-              </h5>
-            </div>
-          </div>
-        </div>
-        <div class="parallax"><img src="assets/frontend_webdeveloper_II.png" alt="Unsplashed background img 1"></div>
+      <div class="github-cards">
+        <img
+          src="https://github-readme-stats.vercel.app/api/?username=joaoGabriel55&layout=compact&show_icons=true&title_color=000&text_color=000&bg_color=FFF"
+          alt="github stats"
+          srcset=""
+        />
+        <img
+          class="github-languages"
+          src="https://github-readme-stats.vercel.app/api/top-langs/?username=joaoGabriel55&layout=compact&show_icons=true&title_color=000&text_color=000&bg_color=FFF"
+          alt="github languages"
+          srcset=""
+        />
       </div>
     </main>
-    <footer class="page-footer indigo darken-4">
-      <div class="container">
-        <div class="row">
-          <div class="col l6 s12">
-            <h5 class="white-text">Gabriel Quaresma</h5>
-            <p class="grey-text text-lighten-4">Always in evolution</p>
-          </div>
-          <div class="col l4 offset-l2 s12">
-            <h5 class="white-text">Social media</h5>
-            <ul>
-              <li>
-                <a
-                  class="grey-text text-lighten-3"
-                  href="https://github.com/joaoGabriel55"
-                  target="_blank"
-                  >Github</a
-                >
-              </li>
-              <li>
-                <a
-                  class="grey-text text-lighten-3"
-                  href="https://www.linkedin.com/in/gabriel-quaresma-92b843137"
-                  target="_blank"
-                  >LinkedIn</a
-                >
-              </li>
-              <li>
-                <a
-                  class="grey-text text-lighten-3"
-                  href="https://www.instagram.com/quaresmadraw"
-                  target="_blank"
-                  >Instagram</a
-                >
-              </li>
-            </ul>
-          </div>
-        </div>
+    <div class="profile-section">
+      <h2 class="subtitle">Find me on social networks</h2>
+      <img src="/assets/profile.png" alt="profile" class="profile-image" />
+      <div class="social-networks">
+        <a
+          v-for="socialNetwork in socialNetworks"
+          :href="socialNetwork.link"
+          target="_blank"
+        >
+          <img
+            :src="socialNetwork.img"
+            :alt="socialNetwork.alt"
+            class="social-network"
+          />
+        </a>
       </div>
-      <div class="footer-copyright">
-        <div class="container">
-          © {{ currentYear }} made with ❤️ by Gabriel Quaresma -
-          Front-end (web and mobile) developer
-        </div>
-      </div>
-    </footer>
+      <p class="footer">
+        © 2022 made with ❤️ by Gabriel Quaresma Front-end (web and mobile)
+        developer
+      </p>
+    </div>
     <script type="text/javascript" src="js/materialize.min.js"></script>
     <script type="text/javascript" src="js/index.js"></script>
     <script setup>
-      const BASE_API = 'https://api.github.com'
-      const SEARCH_API = `${BASE_API}/search/issues?q=author:joaoGabriel55 is:pull-request`
-      const USER_PROFILE = `${BASE_API}/users/joaoGabriel55`
-  
-      const { createApp } = Vue
+      const { createApp } = Vue;
 
       createApp({
         data() {
           return {
-            currentYear: new Date().getFullYear(),
-            profileInfo: {
-              location: '',
-              followers: '',
-            },
-            repositories: null,
-            pullRequests: null,
-            skills: [
-              "#Java",
-              "#Spring",
-              "#JavaScript",
-              "#React.js",
-              "#Vue.js",
-              "#Node.js",
-              "#Android",
-              "#Dart",
-              "#Flutter",
-            ]
+            socialNetworks: [
+              {
+                img: "/assets/github-icon.svg",
+                alt: "github-icon",
+                link: "https://globo1.com",
+              },
+              {
+                img: "/assets/instagram-icon.svg",
+                alt: "instagram-icon",
+                link: "https://globo2.com",
+              },
+              {
+                img: "/assets/linkedin-icon.svg",
+                alt: "linkedin-icon",
+                link: "https://globo3.com",
+              },
+            ],
           };
         },
-        mounted() {
-          this.loadProfile()
-          this.loadRepositories()
-          this.loadPullRequests()
-        },
-        methods: {
-          loadProfile() {
-            fetch(USER_PROFILE)
-              .then((response) => response.json())
-              .then(({ location, followers }) => {
-                this.profileInfo = { location, followers }
-              });
-          },
-          loadRepositories() {
-            fetch(`${USER_PROFILE}/repos`)
-              .then((response) => response.json())
-              .then((data) => {
-                repositories = data.filter(
-                  (repo) => repo.name !== "joaoGabriel55.github.io"
-                );
-
-                repositories.sort((a,b) => {
-                  return a.stargazers_count - b.stargazers_count
-                });
-
-                this.repositories = repositories.reverse()
-              });
-          },
-          loadPullRequests() {
-            fetch(SEARCH_API)
-              .then((response) => response.json())
-              .then(({ items }) => {
-                const pullRequests = items
-                  .map(({ title, html_url, repository_url, state, updated_at }) => {
-                    const [,repository] = repository_url.split(`${BASE_API}/repos/`)
-
-                    return {
-                      title,
-                      link: html_url,
-                      repository,
-                      state,
-                      updatedAt: new Date(updated_at).toLocaleDateString()
-                    };
-                  })
-                  .filter(({ repository }) => !repository.includes('joaoGabriel55'));
-
-
-                this.pullRequests = pullRequests
-              });
-          }
-        },
+        mounted() {},
+        methods: {},
       }).mount("#app");
     </script>
   </body>
