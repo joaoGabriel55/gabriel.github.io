@@ -17,7 +17,7 @@ main {
   }
 
   main {
-    display: flex;
+    display: block;
   }
 }
 
