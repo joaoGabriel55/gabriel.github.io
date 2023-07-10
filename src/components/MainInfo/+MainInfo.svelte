@@ -1,6 +1,6 @@
 <script>
-  import emailIcon from "$lib/assets/email.svg";
-  import locationIcon from "$lib/assets/location.svg";
+  import emailIcon from "../../lib/assets/email.svg";
+  import locationIcon from "../../lib/assets/location.svg";
   import { isMobile } from "../../modules/+CheckDevice.svelte";
   import Info from "./+Info.svelte";
   import MyName from "./+MyName.svelte";

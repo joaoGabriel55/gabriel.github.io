@@ -1,8 +1,8 @@
 <script>
-  import githubIcon from "$lib/assets/github-icon.svg";
-  import instagramIcon from "$lib/assets/instagram-icon.svg";
-  import linkedinIcon from "$lib/assets/linkedin-icon.svg";
-  import profilePicture from "$lib/assets/profile.png";
+  import githubIcon from "../../lib/assets/github-icon.svg";
+  import instagramIcon from "../../lib/assets/instagram-icon.svg";
+  import linkedinIcon from "../../lib/assets/linkedin-icon.svg";
+  import profilePicture from "../../lib/assets/profile.png";
   import { isMobile } from "../../modules/+CheckDevice.svelte";
 
   const socialNetworks = [
