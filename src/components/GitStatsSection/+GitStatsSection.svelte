@@ -13,6 +13,6 @@
 
 <div class="bg-app-color flex lg:justify-center lg:px-48 overflow-auto">
   {#each stats as { src, alt }}
-    <img {src} {alt} />
+    <img {src} {alt} loading="lazy" />
   {/each}
 </div>
