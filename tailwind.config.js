@@ -10,8 +10,7 @@ export default {
         'app-color': '#151515'
       },
       backgroundImage: {
-        'desktop-background': "url('/src/lib/assets/background.png')",
-        'mobile-background': "url('/src/lib/assets/background-mobile.png')",
+        'app-wallpaper': "url('/src/lib/assets/bg.jpg')",
       }
     },
   },

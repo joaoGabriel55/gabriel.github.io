@@ -6,11 +6,11 @@
   export const prerender = true;
 </script>
 
-<main class="grid lg:auto-rows-app-layout">
+<main class="grid grid-cols-1 md:grid-cols-[2fr_1fr]">
   <MainInfo />
   <GitStatsSection />
-  <Footer />
 </main>
+<Footer />
 
 <style lang="postcss">
   :global(html) {

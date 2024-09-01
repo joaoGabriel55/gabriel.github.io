@@ -11,8 +11,8 @@
   ];
 </script>
 
-<div class="bg-app-color flex lg:justify-center lg:px-48 overflow-auto">
+<div class="bg-app-color flex flex-col justify-center">
   {#each stats as { src, alt }}
-    <img {src} {alt} loading="lazy" />
+    <img {src} {alt} loading="eager" />
   {/each}
 </div>
